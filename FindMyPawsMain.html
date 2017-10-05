@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+hello i have been modify
+-->
+<html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="design.css">
+        <title> Find My Paws</title>
+    </head>
+    <body style="background: linear-gradient(#D4EFDF, white)">
+      <!-- Script for the login and sign up to close anywhere when clicks in gray area -->
+      <script>
+      // Get the modal
+      var modal2 = document.getElementById('id02');
+      var modal1 = document.getElementById('id01');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal1) {
+              modal1.style.display = "none";
+          }
+          else if (event.target == modal2) {
+            modal2.style.display = 'none';
+          }
+      }
+      </script>
+
+      <!-- Link to Implemementing the font from google website -->
+      <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+        <!-- Title page message-->
+
+      <div id="searchBar">
+                <!--general search box-->
+        <input type="text" style="width:40%; font-family: 'Poiret One', cursive; " placeholder="Looking for?">
+        <input type="button" value="Search" style="font-family: 'Poiret One', cursive;">
+      </div>
+
+            <!--picutre of the location tag-->
+      <img src="locationClipArt.png" style="width:15%; padding: 0px 0px 0px 550px;position:relative; top:-75px;">
+      <h1 id="greeting"> Find My P<img src="whitepaw.png" style="width:2%;">ws</h1>
+
+        <!--button to open login form -->
+      <button onclick="document.getElementById('id01').style.display = 'block'" style="position: relative; top:-100px;">Login</button>
+
+        <!--The modal for login -->
+      <div id="id01" class="modal">
+          <span onclick="document.getElementById('id01').style.display ='none'" class="close" title="Close Modal"></span>
+          <!--Modal content -->
+          <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+              <img src="dogloginAvatar.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+              <label><b>Username</b></label>
+              <input type="text" style="font-family:'Poiret One', cursive; font-size:20px;" placeholder="Username" name="uname" required>
+              <label><b>Password</b></label>
+              <input type="password" style="font-family:'Poiret One', cursive; font-size:20px;" placeholder="Password" name="psw" required>
+              <input type="checkbox" checked="checked"> Rememeber me </input>
+
+              <button type="submit">Login</button>
+              <div style="background-color: #f1f1f1">
+                <button style="background-color:#C8C9C8;"type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              </div>
+
+            </div>
+          </form>
+      </div>
+
+        <!--signup button-->
+      <button onclick="document.getElementById('id02').style.display = 'block'"style="position: relative; top:-100px;">Sign Up</button>
+
+        <!-- the modal for sign up -->
+      <div id="id02" class="modal">
+          <span onclick="document.getElementById('id02').style.display ='none'" class="close" title="Close Modal"></span>
+
+          <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+              <!-- First name  -->
+              <input type="text2" style="font-family:'Poiret One', cursive; font-size: 20px;" placeholder="First name" name="Fname" required>
+              <!-- Last name  -->
+              <input type="text2" style="font-family:'Poiret One', cursive; font-size:20px;" placeholder="Last name" name="Lname" required>
+              <!-- email -->
+              <input type="text2" style="font-family:'Poiret One', cursive; font-size:20px; width:90%" placeholder="Email" name="email" required>
+              <!-- phone number -->
+              <input type="text2" style="font-family:'Poiret One', cursive;font-size:20px;width:30%;" placeholder="Phone" name="phone" >
+              <!-- username -->
+              <input type="text2" style="font-size:20px; font-family:'Poiret One', cursive;width:90%" placeholder="Username" name="Uname" required>
+              <!-- password -->
+              <input type="password2" style="font-size: 20px; font-family:'Poiret One', cursive;width:32%;" placeholder="Password" name="Psw" required>
+              <!-- re-enter password -->
+              <input type="password2" style="font-size: 20px; font-family:'Poiret One', cursive;" placeholder="Re-enter Password" name="Psw" required>
+
+              <input type="checkbox" checked="checked"> Remember me </input>
+
+              <button type="signup">Sign Up</button>
+              <div style="background-color: #f1f1f1">
+                <button style="background-color:#C8C9C8;"type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+              </div>
+
+            </div>
+
+          </form>
+        </div>
+
+        <!--introduction to the website -->
+      <div class="bg1">
+        <div class="caption1">
+          <span class="border1" > About Us</span>
+        </div>
+      </div>
+
+        <!--introduction information-->
+        <div style="font-family:'Poiret One', cursive; color: #F08080; background-color: white; text-align: center; padding: 5px 8px; text-align:justify;">
+          <h3 style="text-align:center;"> First and formal most </h3>
+          <p> Introducing find my paw, where you can post/search for your lost pet to help reunite pet and petowner</p>
+        </div>
+
+        <!--How does it work title-->
+        <div class="bg2">
+          <div class="caption1">
+            <span class="border1" style="background-color:transparent; color: #D4EFDF;"><b>How does it work?</b></span>
+          </div>
+        </div>
+
+        <!--how does it work explain -->
+        <div class="position">
+          <div class="block1">
+            <div class="inBlock1">
+              <p>1. Simply login</p>
+            </div>
+            <div class="inBlock1">
+              <p>2. Browse</p>
+            </div>
+            <div class="inBlock1">
+              <p>3. Post</p>
+            </div>
+          </div>
+        </div>
+
+        <!--browse through the already exist posts-->
+
+
+        <!--background3 -->
+        <div class="bg3">
+          <div class="caption1">
+            <span class="border1" style="background-color:#F08080; color:white;">Contact Us </span>
+          </div>
+        </div>
+
+        <!--Contact us information -->
+        <div class="position">
+          <div class="block1" style="color: white;">
+            <p> Towson University</p>
+            <p>7800 York Road, Towson, MD, 21213</p>
+            <p>findmypawssupport@gmail.com</p>
+        </div>
+
+        </div>
+    </body>
+</html>
