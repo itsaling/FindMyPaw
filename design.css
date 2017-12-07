@@ -15,9 +15,10 @@
   border: none;
 }
 
+
 .inBlock1{
-  width: 320px;
-  height: 500px;
+  /*width: 320px;*/
+  /*height: 500px;*/
   vertical-align: top;
   display: inline-block;
   border: 10px solid white;
@@ -25,6 +26,7 @@
   background-color: #D4EFDF  ;
 
 }
+
 /*Adding background*/
 .bg1{
   background-image: url("pets.jpg");
@@ -72,21 +74,13 @@
   color: #AAABAB;
   background-color: #7DCEA0;
   text-align: center;
-  padding: 50px 80px;
+  /*padding: 50px 80px;*/
   text-align: center;
 }
 input[type= text], input[type= password]{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-input[type=text2], input[type= password2]{
-  width: 38%;
-  padding: 12px 20px;
-  margin: 20px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -100,6 +94,20 @@ button{
   width: 100%;
   font-size: 30px;
   font-family: 'Poiret One',cursive;
+}
+.btn{
+
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
 }
 .imgcontainer{
   text-align: center;
@@ -115,6 +123,7 @@ img.avatar{
   font-size: 20px;
   text-align: center;
   padding: 30px;
+
 }
 
 /*the modal background */

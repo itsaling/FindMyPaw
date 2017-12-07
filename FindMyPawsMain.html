@@ -12,21 +12,6 @@ hello i have been modify
     </head>
     <body style="background: linear-gradient(#D4EFDF, white)">
       <!-- Script for the login and sign up to close anywhere when clicks in gray area -->
-      <script>
-      // Get the modal
-      var modal2 = document.getElementById('id02');
-      var modal1 = document.getElementById('id01');
-
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-          if (event.target == modal1) {
-              modal1.style.display = "none";
-          }
-          else if (event.target == modal2) {
-            modal2.style.display = 'none';
-          }
-      }
-      </script>
 
       <!-- Link to Implemementing the font from google website -->
       <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
@@ -105,6 +90,21 @@ hello i have been modify
 
           </form>
         </div>
+        <script>
+        // Get the modal
+        var modal2 = document.getElementById('id02');
+        var modal1 = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+            else if (event.target == modal2) {
+              modal2.style.display = 'none';
+            }
+        }
+        </script>
 
         <!--introduction to the website -->
       <div class="bg1">
@@ -131,6 +131,8 @@ hello i have been modify
           <div class="block1">
             <div class="inBlock1">
               <p>1. Simply login</p>
+
+              <img src="Login_click_icon.png" style="width:30%; padding: ">
             </div>
             <div class="inBlock1">
               <p>2. Browse</p>
