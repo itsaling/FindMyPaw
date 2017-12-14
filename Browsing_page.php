@@ -81,8 +81,8 @@ li .dropdown{
 
          <!-- NAGIVATION BAR  -->
     	<ul>
-    		<li><a class ="active" href="FindMyPaws.php" style="font-family: 'Poiret One', cursive;"> Home </a></li>
-    		<li> <a href="#contact" style="font-family: 'Poiret One', cursive;">Contact Us </a> </li>
+    		<li><a class ="active" href="Browsing_page.php" style="font-family: 'Poiret One', cursive;"> Home </a></li>
+    		<li> <a href="contactus.php" style="font-family: 'Poiret One', cursive;">Contact Us </a> </li>
     		<li class="dropdown">
     			<a href="javascript:void(0)" class="dropbtn" style="font-family: 'Poiret One', cursive;">Browse </a>
     			<div class="dropdown-content">
@@ -105,7 +105,7 @@ li .dropdown{
 		<h1 style="font-family: 'Poiret One', cursive; ">Hi, <b><?php echo $_SESSION['username']; ?></b>. Welcome to our site.</h1>
 
                 <!--picture of the location tag-->
-    <img src="locationClipArt.png" style="width:15%; padding: 0px 0px 0px 550px;position:relative; top:-75px;">
+    <img src="locationClipArt.png" style="width:15%; padding: 0px 0px 0px 670px;position:relative; top:-75px;">
     <h1 id="greeting"> Find My P<img src="whitepaw.png" style="width:2%;">ws</h1>
 
             <!--button to open post form -->
@@ -164,7 +164,7 @@ li .dropdown{
               <!-- BROWSING SECTION  -->
               <div class="position" >
               	<div class="block1">
-              		<div class="inBlock1">
+              		<div class="inBlock1" style="font-size:20px">
                     <!-- displaying all the post from the database -->
               			<p><b>All Post</b></p>
 										<?php
@@ -177,7 +177,16 @@ li .dropdown{
 										while($row = mysqli_fetch_assoc($result)){
                       ?>
                       <!-- display the images from database -->
-                      <p> Post ID: <?php $postid = $row['post_ID']; echo $postid; /*echo ", Username: ".$row['username'];*/?></p>
+                      <p> Post ID: <?php $postid = $row['post_ID']; echo $postid;?></p>
+                      <?php
+                        require_once 'config.php';
+                        $query = mysqli_query($link, "SELECT USER.username, POST.post_ID FROM USER INNER JOIN POST ON POST.user_ID = USER.user_ID");
+                        while($row3 = mysqli_fetch_assoc($query)){
+                          if($row['post_ID'] == $row3['post_ID']){
+                            echo  "<b>".$row3['username']."</b>";
+                          }
+                        }
+                      ?>
                       <div style="cursor: pointer;">
                         <!-- DISPLAY THE POST PHOTO  -->
                           <img src="<?php echo $row['pic'];?>" height = '200px'; width = '200px' onclick="document.getElementById('id02').style.display = 'block';">
@@ -248,8 +257,8 @@ li .dropdown{
                         <input type="hidden" value="<?php echo $row['post_ID'];?>" name="postid">
                         <button type="submit" name="submit">Comment</button>
                     </form>
-                      <!-- <br>
-                      <br> -->
+                      <br>
+                      <br>
                     <?php } ?>
 
 

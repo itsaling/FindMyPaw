@@ -82,12 +82,12 @@ hello i have been modify
       <!-- NAVIGATION BAR  -->
       <ul>
     		<li><a class ="active" href="FindMyPaws.php" style="font-family: 'Poiret One', cursive;"> Home </a></li>
-    		<li> <a href="#contact" style="font-family: 'Poiret One', cursive;">Contact Us </a> </li>
+    		<li> <a href="contactus.php" style="font-family: 'Poiret One', cursive;">Contact Us </a> </li>
     		<li class="dropdown">
     			<a href="javascript:void(0)" class="dropbtn" style="font-family: 'Poiret One', cursive;">Browse </a>
     			<div class="dropdown-content">
-    				<a href="lost.php" style="font-family: 'Poiret One', cursive;"> Lost pet </a>
-    				<a href="found.php" style="font-family: 'Poiret One', cursive;"> Found pet</a>
+    				<a href="publicLost.php" style="font-family: 'Poiret One', cursive;"> Lost pet </a>
+    				<a href="publicFound.php" style="font-family: 'Poiret One', cursive;"> Found pet</a>
     			</div>
     		 </li>
     		<li> <a href="#shelter" style="font-family: 'Poiret One', cursive;">Shelter near me </a> </li>
@@ -102,7 +102,7 @@ hello i have been modify
 
 
             <!--picture of the location tag-->
-      <img src="locationClipArt.png" style="width:15%; padding: 0px 0px 0px 550px;position:relative; top:-75px;">
+      <img src="locationClipArt.png" style="width:15%; padding: 0px 0px 0px 670px;position:relative; top:-75px;">
       <h1 id="greeting"> Find My P<img src="whitepaw.png" style="width:2%;">ws</h1>
 
         <!--button to open login form -->
@@ -225,8 +225,10 @@ hello i have been modify
 
         <!--introduction information-->
         <div style="font-family:'Poiret One', cursive; color: #F08080; background-color: white; text-align: center; padding: 5px 8px; text-align:justify;">
-          <h3 style="text-align:center;"> First and formal most </h3>
-          <p> Introducing find my paw, where you can post/search for your lost pet to help reunite pet and petowner</p>
+          <h3 style="text-align:center; font-size:20px"> First and Formal Most </h3>
+          <p style="font-size:20px"> As fellow pet owners, we all love our pets and would do anything for them. Sadly, on occasion pets have been known to run away, or get lost during terrible natural disasters. In repsonse, we founded a web application that would allow us to connect with those whom have lost or found pets.</p>
+          <h3 style="text-align:center;"> Vision </h3>
+          <p style="font-size:20px">Find My Paws is a dynamic web application,functioning as a virtual bulletin board dedicated for users to post information, search for, and find their lost pets.</p>
         </div>
 
         <!--How does it work title-->
@@ -240,7 +242,7 @@ hello i have been modify
         <!--browse through the already exist posts-->
         <div class="position">
           <div class="block1">
-            <div class="inBlock1">
+            <div class="inBlock1" style="font-size:20px">
               <p><b>All Post</b></p>
               <?php
               require_once 'config.php';
@@ -249,12 +251,20 @@ hello i have been modify
               $result = mysqli_query($link, $sql);
 
               while($row = mysqli_fetch_assoc($result)){
-
-                echo "<img src='".$row['pic']."' height = '200px'; width = '200px'>"."  ";
+                  $query = mysqli_query($link, "SELECT USER.username, POST.post_ID FROM USER INNER JOIN POST ON POST.user_ID = USER.user_ID");
+                  while($row3 = mysqli_fetch_assoc($query)){
+                    if($row['post_ID'] == $row3['post_ID']){
+                      echo  "<b>".$row3['username']."</b>";
+                    }
+                  }
+                echo "<br><img src='".$row['pic']."' height = '200px'; width = '200px'>"."  ";
                 echo "<p style='color: red;'>"."<b>".$row['post_type']."</p>";
                 echo "  <b>Petname:</b> " . $row['petname'];
                 echo "  <b>Description:</b> " . " " . $row['description'] ;
                 echo "  <b>DOP: </b>" . $row['date'] . "</br>";
+                echo "<br>";
+                echo "<br>";
+                echo "<br>";
                 echo "<br>";
                 //var_dump($row['pic']); die;
               }

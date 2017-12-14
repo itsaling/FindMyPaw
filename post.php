@@ -38,7 +38,7 @@
      <button type="submit" style="background-color:#A9DFBF;" value="submit">Post</button>
      <div style="background-color: #f1f1f1">
        <!-- <button style="background-color:#C8C9C8;"type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> -->
-       <button style="background-color:#C8C9C8;"type="button" onclick="location = 'FindMyPaws.php'" name="cancel">Cancel</button>
+       <button style="background-color:#C8C9C8;"type="button" onclick="location = 'Browsing_page.php'" name="cancel">Cancel</button>
        <?php
        if(isset($_POST['cancel'])){
          header("Location: Browsing_page.php");
